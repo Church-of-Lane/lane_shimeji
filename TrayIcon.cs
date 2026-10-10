@@ -1,37 +1,33 @@
-using System.Windows;
-using Forms = System.Windows.Forms;
-using Drawing = System.Drawing;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Platform;
 
 namespace ShimejiLane;
 
-// Icon in the taskbar's notification area with an Exit menu
+// Icon in the notification area (Windows), menu bar (macOS) or status tray (Linux) with an Exit menu
 public sealed class TrayIcon : IDisposable
 {
-    private readonly Forms.NotifyIcon icon;
+    private readonly Avalonia.Controls.TrayIcon icon;
 
     public TrayIcon(Window window)
     {
-        icon = new Forms.NotifyIcon
-        {
-            Icon = LoadIcon(),
-            Text = "ShimejiLane",
-            ContextMenuStrip = new Forms.ContextMenuStrip(),
-            Visible = true,
-        };
-        icon.ContextMenuStrip.Items.Add("Exit", null, (_, _) => window.Close());
-    }
+        var exit = new NativeMenuItem("Exit");
+        exit.Click += (_, _) => window.Close();
 
-    private static Drawing.Icon LoadIcon()
-    {
-        using var stream = Application.GetResourceStream(new Uri("pack://application:,,,/img/shime1.png")).Stream;
-        using var bitmap = new Drawing.Bitmap(stream);
-        return Drawing.Icon.FromHandle(bitmap.GetHicon());
+        icon = new Avalonia.Controls.TrayIcon
+        {
+            Icon = new WindowIcon(AssetLoader.Open(new Uri("avares://ShimejiLane/img/shime1.png"))),
+            ToolTipText = "ShimejiLane",
+            Menu = new NativeMenu { exit },
+            IsVisible = true,
+        };
+        Avalonia.Controls.TrayIcon.SetIcons(Application.Current!, new TrayIcons { icon });
     }
 
     public void Dispose()
     {
-        // Without this the icon lingers in the tray until you hover over it
-        icon.Visible = false;
+        // Without this the icon can linger in the tray until you hover over it
+        icon.IsVisible = false;
         icon.Dispose();
     }
 }

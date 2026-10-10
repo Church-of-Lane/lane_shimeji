@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ShimejiLane.MainWindow"
+        Title="ShimejiLane"
+        Width="140" Height="130"
+        SystemDecorations="None"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        CanResize="False"
+        WindowStartupLocation="Manual">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Exit" Click="Exit_Click" />
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Image x:Name="Sprite"
+           Stretch="Fill"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Bottom"
+           RenderOptions.BitmapInterpolationMode="None"
+           PointerPressed="Sprite_PointerPressed"
+           PointerReleased="Sprite_PointerReleased"
+           PointerCaptureLost="Sprite_PointerCaptureLost" />
+</Window>

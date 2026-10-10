@@ -1,0 +1,41 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property.VerifyReferenceTrimCompatibility = 
+build_property.VerifyReferenceAotCompatibility = 
+build_property.AvaloniaNameGeneratorIsEnabled = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.AvaloniaNameGeneratorViewFileNamingStrategy = NamespaceAndClassName
+build_property.AvaloniaNameGeneratorAttachDevTools = true
+build_property.AvaloniaUseCompiledBindingsByDefault = true
+build_property.AvaloniaMainPackageVersion = 11.3.22
+build_property.AvaloniaPreviewerNetCoreToolPath = C:\Users\ender\.nuget\packages\avalonia\11.3.22\buildTransitive\\..\tools\netstandard2.0\designer\Avalonia.Designer.HostApp.dll
+build_property.AvaloniaResourcePaths = C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime1.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime10.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime11.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime12.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime13.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime14.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime15.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime16.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime17.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime18.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime19.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime2.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime20.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime21.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime22.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime23.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime24.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime25.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime26.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime27.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime28.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime29.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime3.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime30.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime31.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime32.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime33.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime34.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime35.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime36.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime37.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime38.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime39.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime4.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime40.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime41.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime42.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime43.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime44.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime45.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime46.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime5.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime6.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime7.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime8.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\img\shime9.png,C:\Users\ender\OneDrive\Desktop\lane_shimeji\App.axaml,C:\Users\ender\OneDrive\Desktop\lane_shimeji\MainWindow.axaml
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ShimejiLane
+build_property.ProjectDir = C:\Users\ender\OneDrive\Desktop\lane_shimeji\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/ender/OneDrive/Desktop/lane_shimeji/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/ender/OneDrive/Desktop/lane_shimeji/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

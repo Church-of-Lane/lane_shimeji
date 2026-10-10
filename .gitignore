@@ -1,0 +1,4 @@
+# Packages and publish output from publish.py
+dist/
+bin/publish/
+bin/Release/
