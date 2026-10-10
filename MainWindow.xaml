@@ -1,0 +1,30 @@
+<Window x:Class="ShimejiLane.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShimejiLane"
+        mc:Ignorable="d"
+        Title="ShimejiLane"
+        Width="140" Height="130"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Exit" Click="Exit_Click" />
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Image x:Name="Sprite"
+           Source="/img/shime1.png"
+           Stretch="Fill"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Bottom"
+           RenderOptions.BitmapScalingMode="NearestNeighbor"
+           MouseLeftButtonDown="Sprite_MouseLeftButtonDown"
+           MouseLeftButtonUp="Sprite_MouseLeftButtonUp"
+           LostMouseCapture="Sprite_LostMouseCapture" />
+</Window>
