@@ -76,8 +76,9 @@ The pet keeps walking around, and no screenshots are taken or sent until you tic
 one line per reply. Neither is ever deleted by the app. Turn Lane off when you have something on screen
 you don't want sent.
 
-> **Screenshots currently only work on Windows.** They use ffmpeg's `gdigrab` capture, which only
-> exists on Windows. On macOS and Linux the pet runs fine, but leave Lane turned off.
+> **macOS:** the first screenshot asks for Screen Recording permission. Allow it in System Settings →
+> Privacy & Security → Screen Recording, then restart the app. Without it, Lane only sees your
+> wallpaper.
 
 ## Using it
 
