@@ -1,2 +1,0 @@
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\publish\win-arm64\ShimejiLane.pdb
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\publish\win-arm64\ShimejiLane.exe

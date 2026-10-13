@@ -12,15 +12,38 @@
         WindowStartupLocation="Manual">
     <Window.ContextMenu>
         <ContextMenu>
+            <MenuItem x:Name="LaneToggle" Header="Lane (screenshots)" ToggleType="CheckBox" IsChecked="True" Click="LaneToggle_Click" />
+            <Separator />
             <MenuItem Header="Exit" Click="Exit_Click" />
         </ContextMenu>
     </Window.ContextMenu>
-    <Image x:Name="Sprite"
-           Stretch="Fill"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Bottom"
-           RenderOptions.BitmapInterpolationMode="None"
-           PointerPressed="Sprite_PointerPressed"
-           PointerReleased="Sprite_PointerReleased"
-           PointerCaptureLost="Sprite_PointerCaptureLost" />
+    <Panel>
+        <Image x:Name="Sprite"
+               Stretch="Fill"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Bottom"
+               RenderOptions.BitmapInterpolationMode="None"
+               PointerPressed="Sprite_PointerPressed"
+               PointerReleased="Sprite_PointerReleased"
+               PointerCaptureLost="Sprite_PointerCaptureLost" />
+
+        <!-- Speech bubble above the pet. Its own popup window, so it can be bigger than 140x130.
+             IsHitTestVisible="False" means clicks are ignored; set BubbleText.Text from code. -->
+        <Popup x:Name="Bubble"
+               PlacementTarget="{Binding #Sprite}"
+               Placement="Top"
+               IsLightDismissEnabled="False"
+               IsHitTestVisible="False">
+            <Border Background="#2D000000"
+                    CornerRadius="8"
+                    Padding="8,6"
+                    MaxWidth="260"
+                    IsHitTestVisible="False">
+                <TextBlock x:Name="BubbleText"
+                           Foreground="#F7F6F6"
+                           TextWrapping="Wrap"
+                           IsHitTestVisible="False" />
+            </Border>
+        </Popup>
+    </Panel>
 </Window>

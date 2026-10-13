@@ -1,2 +1,0 @@
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\publish\linux-x64\ShimejiLane.pdb
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\publish\linux-x64\ShimejiLane

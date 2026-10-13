@@ -1,4 +1,7 @@
 # Packages and publish output from publish.py
-#dist/
+dist/
+bin/
+obj/
 bin/publish/
 bin/Release/
+/.env

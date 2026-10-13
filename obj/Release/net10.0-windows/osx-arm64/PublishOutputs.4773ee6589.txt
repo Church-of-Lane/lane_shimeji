@@ -1,5 +1,0 @@
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\Release\net10.0-windows\osx-arm64\publish\ShimejiLane
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\Release\net10.0-windows\osx-arm64\publish\ShimejiLane.dll
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\Release\net10.0-windows\osx-arm64\publish\ShimejiLane.deps.json
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\Release\net10.0-windows\osx-arm64\publish\ShimejiLane.runtimeconfig.json
-C:\Users\ender\OneDrive\Desktop\lane_shimeji\bin\Release\net10.0-windows\osx-arm64\publish\ShimejiLane.pdb

@@ -1,33 +1,41 @@
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.Base.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.Controls.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.DesignerSupport.dll
-C:\Users\ender\.nuget\packages\avalonia.desktop\11.3.22\lib\net8.0\Avalonia.Desktop.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.Dialogs.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.dll
-C:\Users\ender\.nuget\packages\avalonia.freedesktop\11.3.22\lib\net8.0\Avalonia.FreeDesktop.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.Markup.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.Markup.Xaml.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.Metal.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.MicroCom.dll
-C:\Users\ender\.nuget\packages\avalonia.native\11.3.22\lib\net8.0\Avalonia.Native.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.OpenGL.dll
-C:\Users\ender\.nuget\packages\avalonia.remote.protocol\11.3.22\lib\net8.0\Avalonia.Remote.Protocol.dll
-C:\Users\ender\.nuget\packages\avalonia.skia\11.3.22\lib\net8.0\Avalonia.Skia.dll
-C:\Users\ender\.nuget\packages\avalonia.themes.simple\11.3.22\lib\net8.0\Avalonia.Themes.Simple.dll
-C:\Users\ender\.nuget\packages\avalonia\11.3.22\ref\net8.0\Avalonia.Vulkan.dll
-C:\Users\ender\.nuget\packages\avalonia.win32\11.3.22\lib\net8.0\Avalonia.Win32.Automation.dll
-C:\Users\ender\.nuget\packages\avalonia.win32\11.3.22\lib\net8.0\Avalonia.Win32.dll
-C:\Users\ender\.nuget\packages\avalonia.x11\11.3.22\lib\net8.0\Avalonia.X11.dll
-C:\Users\ender\.nuget\packages\harfbuzzsharp\8.3.1.1\lib\net8.0\HarfBuzzSharp.dll
-C:\Users\ender\.nuget\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.Base.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.Controls.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.DesignerSupport.dll
+C:\Users\ender\.nuget\packages\avalonia.desktop\12.1.4\lib\net10.0\Avalonia.Desktop.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.Dialogs.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.dll
+C:\Users\ender\.nuget\packages\avalonia.freedesktop.atspi\12.1.4\lib\net10.0\Avalonia.FreeDesktop.AtSpi.dll
+C:\Users\ender\.nuget\packages\avalonia.freedesktop\12.1.4\lib\net10.0\Avalonia.FreeDesktop.dll
+C:\Users\ender\.nuget\packages\avalonia.harfbuzz\12.1.4\lib\net10.0\Avalonia.HarfBuzz.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.Markup.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.Markup.Xaml.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.Metal.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.MicroCom.dll
+C:\Users\ender\.nuget\packages\avalonia.native\12.1.4\lib\net10.0\Avalonia.Native.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.OpenGL.dll
+C:\Users\ender\.nuget\packages\avalonia.remote.protocol\12.1.4\lib\net10.0\Avalonia.Remote.Protocol.dll
+C:\Users\ender\.nuget\packages\avalonia.skia\12.1.4\lib\net10.0\Avalonia.Skia.dll
+C:\Users\ender\.nuget\packages\avalonia.themes.simple\12.1.4\lib\net10.0\Avalonia.Themes.Simple.dll
+C:\Users\ender\.nuget\packages\avalonia\12.1.4\ref\net10.0\Avalonia.Vulkan.dll
+C:\Users\ender\.nuget\packages\avalonia.win32\12.1.4\lib\net10.0\Avalonia.Win32.Automation.dll
+C:\Users\ender\.nuget\packages\avalonia.win32\12.1.4\lib\net10.0\Avalonia.Win32.dll
+C:\Users\ender\.nuget\packages\avalonia.x11\12.1.4\lib\net10.0\Avalonia.X11.dll
+C:\Users\ender\.nuget\packages\dotnetenv\3.2.0\lib\netstandard2.0\DotNetEnv.dll
+C:\Users\ender\.nuget\packages\harfbuzzsharp\8.3.1.3\lib\net8.0\HarfBuzzSharp.dll
+C:\Users\ender\.nuget\packages\microcom.runtime\0.11.6\lib\net8.0\MicroCom.Runtime.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Microsoft.CSharp.dll
+C:\Users\ender\.nuget\packages\microsoft.extensions.configuration.abstractions\1.1.2\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ender\.nuget\packages\microsoft.extensions.configuration\1.1.2\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll
+C:\Users\ender\.nuget\packages\microsoft.extensions.primitives\1.1.1\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Microsoft.VisualBasic.Core.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Microsoft.VisualBasic.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Microsoft.Win32.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Microsoft.Win32.Registry.dll
+C:\Users\ender\.nuget\packages\microsoft.win32.systemevents\10.0.12\lib\net10.0\Microsoft.Win32.SystemEvents.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\mscorlib.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\netstandard.dll
-C:\Users\ender\.nuget\packages\skiasharp\2.88.9\lib\net6.0\SkiaSharp.dll
+C:\Users\ender\.nuget\packages\skiasharp\3.119.4\ref\net10.0\SkiaSharp.dll
+C:\Users\ender\.nuget\packages\superpower\3.0.0\lib\net5.0\Superpower.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.AppContext.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Buffers.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Collections.Concurrent.dll
@@ -58,6 +66,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Syst
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Diagnostics.TraceSource.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Diagnostics.Tracing.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.dll
+C:\Users\ender\.nuget\packages\system.drawing.common\10.0.12\lib\net10.0\System.Drawing.Common.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Drawing.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Drawing.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Dynamic.Runtime.dll
@@ -111,6 +120,8 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Syst
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Numerics.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Numerics.Vectors.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.ObjectModel.dll
+C:\Users\ender\.nuget\packages\system.drawing.common\10.0.12\lib\net10.0\System.Private.Windows.Core.dll
+C:\Users\ender\.nuget\packages\system.drawing.common\10.0.12\lib\net10.0\System.Private.Windows.GdiPlus.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Reflection.DispatchProxy.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Reflection.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Reflection.Emit.dll
@@ -187,5 +198,5 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\Syst
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Xml.XmlSerializer.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Xml.XPath.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\System.Xml.XPath.XDocument.dll
-C:\Users\ender\.nuget\packages\tmds.dbus.protocol\0.21.3\lib\net8.0\Tmds.DBus.Protocol.dll
+C:\Users\ender\.nuget\packages\tmds.dbus.protocol\0.94.1\lib\net9.0\Tmds.DBus.Protocol.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.12\ref\net10.0\WindowsBase.dll

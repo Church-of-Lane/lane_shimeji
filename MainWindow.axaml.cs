@@ -6,6 +6,11 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Runtime.InteropServices.Java;
+using DotNetEnv;
+using System.Text.Json;
 
 
 
@@ -78,6 +83,9 @@ public partial class MainWindow : Window
     PixelPoint? pointerOnScreen; // fallback when the OS can't be asked for the cursor
     readonly ScaleTransform faceLeft = new ScaleTransform(1, 1);
     readonly ScaleTransform faceRight = new ScaleTransform(-1, 1);
+    private readonly HttpClient _httpClient;
+    private const string LANE_URL = "http://204.168.211.4:5081/";
+    private string sessionID;
 
     public MainWindow()
     {
@@ -95,26 +103,148 @@ public partial class MainWindow : Window
             closed = true;
             tray.Dispose();
         };
+        _httpClient = new HttpClient();
+        _httpClient.BaseAddress = new Uri(LANE_URL);
+
+        Env.NoClobber().TraversePath().Load();
+        string? laneKey = Environment.GetEnvironmentVariable("LANE_KEY");
+        
+        if (string.IsNullOrEmpty(laneKey))
+        {
+            return;
+        }
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", laneKey);
+
 
     }
-    private void OnFrame(TimeSpan _)
+    private bool laneConnected;
+    // Toggled from the tray menu or the right-click menu; when off the pet only walks around
+    public bool LaneEnabled { get; private set; } = true;
+    // Lets the tray menu update its checkmark when the right-click menu changes it (and vice versa)
+    public event System.Action? LaneEnabledChanged;
+    public async void SetLaneEnabled(bool enabled)
     {
-        if (closed) return;
-        TimeSpan now = clock.Elapsed;
-        double deltaTime = (now - lastTime).TotalSeconds;
-        lastTime = now;
-
-        Update((float)deltaTime);
+        LaneEnabled = enabled;
+        LaneToggle.IsChecked = enabled;
+        LaneEnabledChanged?.Invoke();
+        if (!enabled)
+        {
+            Bubble.IsOpen = false;
+            return;
+        }
+        if (!laneConnected)
+        {
+            try
+            {
+                laneConnected = await Connect();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log("Connect failed: " + ex.Message);
+            }
+        }
+    }
+    private async void MainWindow_Opened(object? sender, EventArgs e)
+    {
+        laneConnected = await Connect();
+        // Work area (screen minus taskbar / Dock / menu bar) in the same units as Left/Top
+        Screen? display = Screens.ScreenFromWindow(this) ?? Screens.Primary;
+        screen = display != null ? display.WorkingArea.ToRect(DesktopScaling) : new Rect(0, 0, 1280, 720);
+        Left = screen.Left + (screen.Width - Width) / 2;
+        Top = screen.Bottom - Height;
         ApplyPosition();
+        lastTime = clock.Elapsed;
         RequestAnimationFrame(OnFrame);
+        
     }
-    private void ApplyPosition()
+    private float screenCount = 8f;
+    private async Task<bool> Connect()
     {
-        PixelPoint pos = PixelPoint.FromPoint(new Point(Left, Top), DesktopScaling);
-        if (pos != Position) Position = pos;
+        var response = await _httpClient.PostAsJsonAsync("/v1/sessions", new
+        {
+            key = "shimeji",
+            displayName = "ShimejiLane",
+            direct = true
+        });
+
+        if (response.IsSuccessStatusCode)
+        {
+            return true;
+        }
+        else return false;
+    }
+    private async void WorkWithScreen()
+    {
+        try
+        {
+            string base64 = Convert.ToBase64String(await ScreenCapture.DoScreenShot());
+            var response = await _httpClient.PostAsJsonAsync("/v1/sessions/shimeji/messages", new
+            {
+                images = new[] { new { data = base64, mediaType = "image/jpeg" } }
+            });
+
+            string body = await response.Content.ReadAsStringAsync();
+            using var doc = JsonDocument.Parse(body);
+    
+            string messageId = doc.RootElement.GetProperty("messageId").GetString();
+
+            string result = "";
+            string historyBody = "";
+            for (int attempt = 0; attempt < 15 && result == ""; attempt++)
+            {
+                await Task.Delay(2000);
+                historyBody = await _httpClient.GetStringAsync("/v1/sessions/shimeji/messages");
+                using var historyDoc = JsonDocument.Parse(historyBody);
+                JsonElement messages = historyDoc.RootElement.GetProperty("messages");
+
+                bool foundMine = false;
+                foreach (JsonElement msg in messages.EnumerateArray())
+                {
+                    string? id = msg.GetProperty("id").GetString();
+                    string? role = msg.GetProperty("role").GetString();
+                    if (id == messageId)
+                    {
+                        foundMine = true;
+                    }
+                    else if (foundMine && string.Equals(role, "assistant", StringComparison.OrdinalIgnoreCase))
+                    {
+                        result = msg.GetProperty("text").GetString() ?? "";
+                        break;
+                    }
+                }
+            }
+            if (result == "")
+            {
+                Console.WriteLine("messageId from POST: " + messageId);
+                Console.WriteLine(historyBody);
+                throw new Exception("No Response Message Found");
+            }
+            
+            Bubble.IsOpen = true;
+            BubbleText.Text = result;
+            Logger.Log(result);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Exception");
+            Console.WriteLine(ex);
+        }
+        
+        
+        
     }
     private void Update(float deltaTime)
     {
+        if(laneConnected && LaneEnabled) screenCount -= deltaTime;
+        if(screenCount <= 8 && Bubble.IsOpen)
+        {
+            Bubble.IsOpen = false;
+        }
+        if(screenCount <= 0)
+        {
+            WorkWithScreen();
+            screenCount = 60f;
+        }
         if (isDragged)
         {
             Drag(deltaTime);
@@ -190,6 +320,22 @@ public partial class MainWindow : Window
         DoAction(deltaTime);
         
 
+    }
+    private void OnFrame(TimeSpan _)
+    {
+        if (closed) return;
+        TimeSpan now = clock.Elapsed;
+        double deltaTime = (now - lastTime).TotalSeconds;
+        lastTime = now;
+
+        Update((float)deltaTime);
+        ApplyPosition();
+        RequestAnimationFrame(OnFrame);
+    }
+    private void ApplyPosition()
+    {
+        PixelPoint pos = PixelPoint.FromPoint(new Point(Left, Top), DesktopScaling);
+        if (pos != Position) Position = pos;
     }
     private int GetRandomTime()
     {
@@ -552,17 +698,7 @@ public partial class MainWindow : Window
         // RenderTransformOrigin defaults to the centre in Avalonia
         Sprite.RenderTransform = leftRight == 1 ? faceLeft : faceRight;
     }
-    private void MainWindow_Opened(object? sender, EventArgs e)
-    {
-        // Work area (screen minus taskbar / Dock / menu bar) in the same units as Left/Top
-        Screen? display = Screens.ScreenFromWindow(this) ?? Screens.Primary;
-        screen = display != null ? display.WorkingArea.ToRect(DesktopScaling) : new Rect(0, 0, 1280, 720);
-        Left = screen.Left + (screen.Width - Width) / 2;
-        Top = screen.Bottom - Height;
-        ApplyPosition();
-        lastTime = clock.Elapsed;
-        RequestAnimationFrame(OnFrame);
-    }
+    
 
     private void Sprite_PointerPressed(object? sender, PointerPressedEventArgs e)
     {
@@ -581,6 +717,11 @@ public partial class MainWindow : Window
     private void Sprite_PointerReleased(object? sender, PointerReleasedEventArgs e)
     {
         if (e.InitialPressMouseButton == MouseButton.Left) EndDrag();
+    }
+
+    private void LaneToggle_Click(object? sender, RoutedEventArgs e)
+    {
+        SetLaneEnabled(!LaneEnabled);
     }
 
     private void Exit_Click(object? sender, RoutedEventArgs e)
